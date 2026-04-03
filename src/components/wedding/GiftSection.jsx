@@ -23,6 +23,15 @@ export default function GiftSection({ iban = null }) {
         Regalo
       </motion.h2>
 
+      <motion.div variants={fadeUp} className="w-[min(78vw,300px)] mt-8 z-10">
+        <img
+          src="/sello_asistencia.png"
+          alt="Sello decorativo"
+          className="w-full h-auto object-contain"
+          loading="lazy"
+        />
+      </motion.div>
+
       <motion.div variants={fadeUp} className="text-center space-y-4 z-10 max-w-sm mt-8">
         <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-foreground">
           ¡Tic tac para el viaje!

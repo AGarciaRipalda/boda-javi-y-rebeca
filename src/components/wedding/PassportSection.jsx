@@ -30,13 +30,19 @@ export default function PassportSection() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
+      <img
+        src="/itinerario.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-12"
+        loading="lazy"
+      />
       <CompassRose />
 
-      <motion.div variants={fadeUp}>
+      <motion.div variants={fadeUp} className="relative z-10">
         <TitleWithMap title="Pasaporte" />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="w-[min(74vw,320px)] my-8">
+      <motion.div variants={fadeUp} className="w-[min(74vw,320px)] my-8 relative z-10">
         <img
           src="/sello_pasaporte.png"
           alt="Sello de pasaporte"
@@ -47,7 +53,7 @@ export default function PassportSection() {
 
       <motion.h3
         variants={fadeUp}
-        className="font-serif text-4xl sm:text-5xl font-bold text-primary tracking-wide uppercase text-center"
+        className="font-serif text-4xl sm:text-5xl font-bold text-primary tracking-wide uppercase text-center relative z-10"
       >
         Javi & Rebeca
       </motion.h3>

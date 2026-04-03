@@ -45,13 +45,19 @@ export default function LocationSection({
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
+      <img
+        src="/itinerario.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-12"
+        loading="lazy"
+      />
       <CompassRose />
 
-      <motion.div variants={fadeUp}>
+      <motion.div variants={fadeUp} className="relative z-10">
         <TitleWithOptionalMap title={title} showMap={showMapBehindTitle} />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="text-center space-y-3 mt-8 z-10">
+      <motion.div variants={fadeUp} className="text-center space-y-3 mt-8 relative z-10">
         <h3 className="font-serif text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground">
           {venueName}
         </h3>
@@ -71,7 +77,7 @@ export default function LocationSection({
           href={mapUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 flex flex-col items-center gap-2 group"
+          className="mt-8 flex flex-col items-center gap-2 group relative z-10"
         >
           <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
             <MapPin className="w-7 h-7 text-primary" />

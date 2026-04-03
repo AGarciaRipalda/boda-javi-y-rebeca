@@ -14,9 +14,15 @@ export default function CouplePhotoSection({ coupleUrl }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
+      <img
+        src="/itinerario.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-12"
+        loading="lazy"
+      />
       <CompassRose />
 
-      <motion.div variants={fadeUp} className="w-full max-w-sm relative">
+      <motion.div variants={fadeUp} className="w-full max-w-sm relative z-10">
         <div className="border-[6px] border-muted/60 rounded-sm p-1 bg-background shadow-lg">
           <img
             src={coupleUrl}
@@ -27,7 +33,7 @@ export default function CouplePhotoSection({ coupleUrl }) {
         </div>
       </motion.div>
 
-      <motion.div variants={fadeUp} className="text-center mt-8 space-y-1">
+      <motion.div variants={fadeUp} className="text-center mt-8 space-y-1 relative z-10">
         <p className="font-serif text-xl sm:text-2xl font-bold uppercase tracking-wider text-primary">
           Prepara tus maletas
         </p>

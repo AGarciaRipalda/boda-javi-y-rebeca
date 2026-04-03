@@ -40,9 +40,15 @@ export default function CountdownSection({ coupleUrl }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <CompassRose className="top-[52vh]" />
+      <img
+        src="/itinerario.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-12"
+        loading="lazy"
+      />
+      <CompassRose />
 
-      <motion.div variants={fadeUp} className="w-full h-[50vh] overflow-hidden">
+      <motion.div variants={fadeUp} className="w-full h-[50vh] overflow-hidden relative z-10">
         <img
           src={coupleUrl}
           alt="Javi y Rebeca"
@@ -53,7 +59,7 @@ export default function CountdownSection({ coupleUrl }) {
 
       <motion.div
         variants={fadeUp}
-        className="w-full bg-background relative -mt-4 rounded-t-xl pt-4 pb-16"
+        className="w-full bg-background/95 relative -mt-4 rounded-t-xl pt-4 pb-16 z-10"
       >
         <div
           className="h-3 w-full"
@@ -98,10 +104,7 @@ export default function CountdownSection({ coupleUrl }) {
           Cuenta atrás...
         </motion.p>
 
-        <motion.div
-          variants={fadeUp}
-          className="flex justify-center gap-2 mt-4 px-6"
-        >
+        <motion.div variants={fadeUp} className="flex justify-center gap-2 mt-4 px-6">
           {[
             { value: timeLeft.days, label: "Días" },
             { value: timeLeft.hours, label: "Horas" },

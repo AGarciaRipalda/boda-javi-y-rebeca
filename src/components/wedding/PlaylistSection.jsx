@@ -31,9 +31,15 @@ export default function PlaylistSection({ playlistUrl = null }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
+      <img
+        src="/itinerario.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-12"
+        loading="lazy"
+      />
       <CompassRose />
 
-      <motion.div variants={fadeUp}>
+      <motion.div variants={fadeUp} className="relative z-10">
         <TitleWithMap title="Playlist" />
       </motion.div>
 
@@ -55,7 +61,7 @@ export default function PlaylistSection({ playlistUrl = null }) {
           href={playlistUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 flex flex-col items-center gap-2 group"
+          className="mt-8 flex flex-col items-center gap-2 group relative z-10"
         >
           <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center group-hover:bg-primary/80 transition-colors">
             <Music className="w-7 h-7 text-primary-foreground" />
@@ -67,7 +73,7 @@ export default function PlaylistSection({ playlistUrl = null }) {
       ) : (
         <motion.div
           variants={fadeUp}
-          className="mt-8 flex flex-col items-center gap-2 opacity-70"
+          className="mt-8 flex flex-col items-center gap-2 opacity-70 relative z-10"
         >
           <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
             <Music className="w-7 h-7 text-primary" />
