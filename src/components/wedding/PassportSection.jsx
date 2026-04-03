@@ -12,7 +12,7 @@ function TitleWithMap({ title }) {
       <img
         src="/mapamundi.png"
         alt=""
-        className="absolute inset-1/2 w-[min(86vw,460px)] -translate-x-1/2 -translate-y-1/2 opacity-20"
+        className="absolute left-1/2 top-1/2 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 opacity-22"
         loading="lazy"
       />
       <h2 className="relative font-serif text-5xl sm:text-6xl font-bold tracking-wider uppercase text-foreground">

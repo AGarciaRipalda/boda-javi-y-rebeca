@@ -14,7 +14,7 @@ function TitleWithOptionalMap({ title, showMap }) {
         <img
           src="/mapamundi.png"
           alt=""
-          className="absolute inset-1/2 w-[min(86vw,460px)] -translate-x-1/2 -translate-y-1/2 opacity-18"
+          className="absolute left-1/2 top-1/2 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 opacity-22"
           loading="lazy"
         />
       ) : null}

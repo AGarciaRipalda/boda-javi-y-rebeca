@@ -51,6 +51,7 @@ export default function WeddingInvitation() {
               address={WEDDING_ADDRESS}
               time="12:00 h"
               mapUrl={MAPS_URL}
+              showMapBehindTitle
             />
             <PassportCardSection />
             <LocationSection

@@ -32,13 +32,13 @@ export default function ItinerarySection() {
 
       <motion.h2
         variants={fadeUp}
-        className="relative z-10 font-serif text-5xl sm:text-6xl font-bold text-foreground tracking-wider uppercase mb-12"
+        className="relative z-10 mt-20 sm:mt-24 font-serif text-5xl sm:text-6xl font-bold text-foreground tracking-wider uppercase mb-16 text-center"
       >
         Itinerario
       </motion.h2>
 
-      <div className="relative z-10 w-full max-w-sm">
-        <div className="absolute left-8 top-0 bottom-0 w-px bg-foreground/20" />
+      <div className="relative z-10 w-full max-w-md mx-auto">
+        <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-foreground/20" />
 
         {events.map((event, idx) => {
           const Icon = event.icon;
@@ -46,22 +46,29 @@ export default function ItinerarySection() {
             <motion.div
               key={event.label}
               variants={{
-                hidden: { opacity: 0, x: -30 },
+                hidden: { opacity: 0, y: 24 },
                 visible: {
                   opacity: 1,
-                  x: 0,
+                  y: 0,
                   transition: { duration: 0.6, delay: idx * 0.15 },
                 },
               }}
-              className="flex items-center gap-6 mb-12 relative"
+              className="grid grid-cols-[1fr_auto_1fr] items-center gap-5 mb-12 relative"
             >
-              <div className="w-16 flex items-center justify-center shrink-0 relative z-10">
-                <Icon className="w-7 h-7 text-primary/70" strokeWidth={1.5} />
+              <div className="justify-self-end text-right">
+                <p className="font-serif text-lg sm:text-xl text-foreground font-bold">
+                  {event.time}
+                </p>
               </div>
-              <div className="absolute left-[30px] w-3 h-3 rounded-full bg-primary z-20" />
-              <div>
+
+              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-background/80 border border-primary/20 shadow-sm">
+                <Icon className="w-7 h-7 text-primary/70" strokeWidth={1.5} />
+                <div className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary" />
+              </div>
+
+              <div className="justify-self-start text-left">
                 <p className="font-serif text-lg sm:text-xl text-foreground">
-                  <span className="font-bold">{event.time}</span> {event.label}
+                  {event.label}
                 </p>
               </div>
             </motion.div>

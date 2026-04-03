@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import CompassRose from "./CompassRose";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -46,7 +45,6 @@ export default function CountdownSection({ coupleUrl }) {
         className="absolute inset-0 h-full w-full object-cover opacity-12"
         loading="lazy"
       />
-      <CompassRose />
 
       <motion.div variants={fadeUp} className="w-full h-[50vh] overflow-hidden relative z-10">
         <img
