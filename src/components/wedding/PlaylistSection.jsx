@@ -1,12 +1,29 @@
 import { motion } from "framer-motion";
 import { Music } from "lucide-react";
+import CompassRose from "./CompassRose";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-export default function PlaylistSection({ worldMapUrl, playlistUrl = null }) {
+function TitleWithMap({ title }) {
+  return (
+    <div className="relative flex items-center justify-center">
+      <img
+        src="/mapamundi.png"
+        alt=""
+        className="absolute inset-1/2 w-[min(86vw,460px)] -translate-x-1/2 -translate-y-1/2 opacity-18"
+        loading="lazy"
+      />
+      <h2 className="relative font-serif text-5xl sm:text-6xl font-bold tracking-wider uppercase text-foreground">
+        {title}
+      </h2>
+    </div>
+  );
+}
+
+export default function PlaylistSection({ playlistUrl = null }) {
   return (
     <motion.section
       className="min-h-screen flex flex-col items-center justify-center px-4 py-16 relative overflow-hidden"
@@ -14,18 +31,13 @@ export default function PlaylistSection({ worldMapUrl, playlistUrl = null }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <motion.h2
-        variants={fadeUp}
-        className="font-serif text-5xl sm:text-6xl font-bold text-foreground tracking-wider uppercase z-10"
-      >
-        Playlist
-      </motion.h2>
+      <CompassRose />
 
-      <motion.div variants={fadeUp} className="w-full max-w-sm relative my-4">
-        <img src={worldMapUrl} alt="Mapa" className="w-full h-auto" loading="lazy" />
+      <motion.div variants={fadeUp}>
+        <TitleWithMap title="Playlist" />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="text-center space-y-4 z-10 mt-4 max-w-xs">
+      <motion.div variants={fadeUp} className="text-center space-y-4 z-10 mt-8 max-w-xs">
         <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-foreground">
           ¡Esto promete!
         </h3>

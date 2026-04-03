@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
+import CompassRose from "./CompassRose";
 
 export default function CoverSection({ onOpen }) {
   return (
     <motion.section
-      className="min-h-screen flex flex-col items-center justify-center px-6 relative"
+      className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
     >
+      <CompassRose />
+
       <div className="text-center space-y-6">
         <motion.p
           className="font-serif text-sm tracking-[0.3em] uppercase text-muted-foreground"

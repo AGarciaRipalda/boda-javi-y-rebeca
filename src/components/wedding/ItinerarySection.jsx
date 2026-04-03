@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, GlassWater, Music, PartyPopper } from "lucide-react";
+import CompassRose from "./CompassRose";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -13,7 +14,7 @@ const events = [
   { time: "00:00 h", label: "Cierre", icon: PartyPopper },
 ];
 
-export default function ItinerarySection({ stampsUrl }) {
+export default function ItinerarySection() {
   return (
     <motion.section
       className="min-h-screen flex flex-col items-center justify-start px-4 py-16 relative overflow-hidden"
@@ -21,13 +22,17 @@ export default function ItinerarySection({ stampsUrl }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="absolute top-4 right-0 w-40 opacity-25">
-        <img src={stampsUrl} alt="" className="w-full" loading="lazy" />
-      </div>
+      <img
+        src="/itinerario.png"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-14"
+        loading="lazy"
+      />
+      <CompassRose />
 
       <motion.h2
         variants={fadeUp}
-        className="font-serif text-5xl sm:text-6xl font-bold text-foreground tracking-wider uppercase mb-12 z-10"
+        className="relative z-10 font-serif text-5xl sm:text-6xl font-bold text-foreground tracking-wider uppercase mb-12"
       >
         Itinerario
       </motion.h2>
@@ -51,11 +56,9 @@ export default function ItinerarySection({ stampsUrl }) {
               className="flex items-center gap-6 mb-12 relative"
             >
               <div className="w-16 flex items-center justify-center shrink-0 relative z-10">
-                <Icon className="w-7 h-7 text-primary/60" strokeWidth={1.5} />
+                <Icon className="w-7 h-7 text-primary/70" strokeWidth={1.5} />
               </div>
-
               <div className="absolute left-[30px] w-3 h-3 rounded-full bg-primary z-20" />
-
               <div>
                 <p className="font-serif text-lg sm:text-xl text-foreground">
                   <span className="font-bold">{event.time}</span> {event.label}
@@ -64,10 +67,6 @@ export default function ItinerarySection({ stampsUrl }) {
             </motion.div>
           );
         })}
-      </div>
-
-      <div className="absolute bottom-4 left-0 w-40 opacity-25">
-        <img src={stampsUrl} alt="" className="w-full" loading="lazy" />
       </div>
     </motion.section>
   );

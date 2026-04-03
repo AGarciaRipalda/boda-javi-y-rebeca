@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import CompassRose from "./CompassRose";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-export default function GiftSection({ stampsUrl, globeUrl, iban = null }) {
+export default function GiftSection({ iban = null }) {
   return (
     <motion.section
       className="min-h-screen flex flex-col items-center justify-center px-4 py-16 relative overflow-hidden"
@@ -13,9 +14,7 @@ export default function GiftSection({ stampsUrl, globeUrl, iban = null }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="absolute top-4 right-0 w-40 opacity-25">
-        <img src={stampsUrl} alt="" className="w-full" loading="lazy" />
-      </div>
+      <CompassRose />
 
       <motion.h2
         variants={fadeUp}
@@ -24,16 +23,7 @@ export default function GiftSection({ stampsUrl, globeUrl, iban = null }) {
         Regalo
       </motion.h2>
 
-      <motion.div variants={fadeUp} className="w-20 h-20 my-6 z-10">
-        <img
-          src={globeUrl}
-          alt="Javi y Rebeca"
-          className="w-full h-full object-contain rounded-full"
-          loading="lazy"
-        />
-      </motion.div>
-
-      <motion.div variants={fadeUp} className="text-center space-y-4 z-10 max-w-sm">
+      <motion.div variants={fadeUp} className="text-center space-y-4 z-10 max-w-sm mt-8">
         <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-foreground">
           ¡Tic tac para el viaje!
         </h3>
@@ -59,10 +49,6 @@ export default function GiftSection({ stampsUrl, globeUrl, iban = null }) {
           Si queréis tener ese detalle, pedidnos la cuenta y os la compartiremos.
         </motion.p>
       )}
-
-      <div className="absolute bottom-4 left-0 w-40 opacity-25">
-        <img src={stampsUrl} alt="" className="w-full" loading="lazy" />
-      </div>
     </motion.section>
   );
 }

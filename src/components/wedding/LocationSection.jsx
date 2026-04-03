@@ -1,10 +1,32 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import CompassRose from "./CompassRose";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
+
+function TitleWithOptionalMap({ title, showMap }) {
+  return (
+    <div className="relative flex items-center justify-center">
+      {showMap ? (
+        <img
+          src="/mapamundi.png"
+          alt=""
+          className="absolute inset-1/2 w-[min(86vw,460px)] -translate-x-1/2 -translate-y-1/2 opacity-18"
+          loading="lazy"
+        />
+      ) : null}
+      <h2
+        className="relative font-serif text-5xl sm:text-6xl font-bold tracking-wider uppercase text-foreground"
+        style={{ textShadow: "2px 2px 0 hsl(var(--destructive) / 0.3)" }}
+      >
+        {title}
+      </h2>
+    </div>
+  );
+}
 
 export default function LocationSection({
   title,
@@ -12,7 +34,7 @@ export default function LocationSection({
   address,
   time,
   mapUrl,
-  worldMapUrl,
+  showMapBehindTitle = false,
 }) {
   const addressLines = address.split("\n");
 
@@ -23,24 +45,13 @@ export default function LocationSection({
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <motion.h2
-        variants={fadeUp}
-        className="font-serif text-5xl sm:text-6xl font-bold text-foreground tracking-wider uppercase z-10"
-        style={{ textShadow: "2px 2px 0 hsl(var(--destructive) / 0.3)" }}
-      >
-        {title}
-      </motion.h2>
+      <CompassRose />
 
-      <motion.div variants={fadeUp} className="w-full max-w-sm relative my-4">
-        <img
-          src={worldMapUrl}
-          alt="Mapa del mundo"
-          className="w-full h-auto"
-          loading="lazy"
-        />
+      <motion.div variants={fadeUp}>
+        <TitleWithOptionalMap title={title} showMap={showMapBehindTitle} />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="text-center space-y-3 mt-4 z-10">
+      <motion.div variants={fadeUp} className="text-center space-y-3 mt-8 z-10">
         <h3 className="font-serif text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground">
           {venueName}
         </h3>

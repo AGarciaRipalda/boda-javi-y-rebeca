@@ -19,10 +19,6 @@ const MAPS_URL =
 
 const IMAGES = {
   couplePhoto: "/couple-portrait.jpg",
-  worldMap: "/1.png",
-  stamp: "/11a.png",
-  travelStamps: "/10.png",
-  globe: "/12.png",
 };
 
 export default function WeddingInvitation() {
@@ -47,52 +43,29 @@ export default function WeddingInvitation() {
             transition={{ duration: 1 }}
             className="w-full"
           >
-            <PassportSection
-              worldMapUrl={IMAGES.worldMap}
-              stampUrl={IMAGES.stamp}
-            />
-
-            <CouplePhotoSection
-              coupleUrl={IMAGES.couplePhoto}
-              stampsUrl={IMAGES.travelStamps}
-            />
-
+            <PassportSection />
+            <CouplePhotoSection coupleUrl={IMAGES.couplePhoto} />
             <LocationSection
               title="CEREMONIA"
               venueName="FINCA TIPUANA"
               address={WEDDING_ADDRESS}
               time="12:00 h"
               mapUrl={MAPS_URL}
-              worldMapUrl={IMAGES.worldMap}
             />
-
-            <PassportCardSection
-              coupleUrl={IMAGES.couplePhoto}
-              stampsUrl={IMAGES.travelStamps}
-            />
-
+            <PassportCardSection />
             <LocationSection
-              title="CELEBRACIÓN"
+              title="DESTINO"
               venueName="FINCA TIPUANA"
               address={WEDDING_ADDRESS}
               time="Después de la ceremonia"
               mapUrl={MAPS_URL}
-              worldMapUrl={IMAGES.worldMap}
+              showMapBehindTitle
             />
-
-            <ItinerarySection stampsUrl={IMAGES.travelStamps} />
-
-            <PlaylistSection worldMapUrl={IMAGES.worldMap} />
-
-            <RSVPSection globeUrl={IMAGES.globe} stampsUrl={IMAGES.travelStamps} />
-
-            <PhotosSection worldMapUrl={IMAGES.worldMap} />
-
-            <GiftSection
-              stampsUrl={IMAGES.travelStamps}
-              globeUrl={IMAGES.globe}
-            />
-
+            <ItinerarySection />
+            <PlaylistSection />
+            <RSVPSection />
+            <PhotosSection />
+            <GiftSection />
             <CountdownSection coupleUrl={IMAGES.couplePhoto} />
           </motion.div>
         )}
