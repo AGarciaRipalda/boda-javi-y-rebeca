@@ -38,7 +38,7 @@ export default function PhotosSection({ photosUrl = null }) {
       <CompassRose />
 
       <div className="relative z-10 flex min-h-screen flex-col items-center px-4">
-        <motion.div variants={fadeUp} className="w-full pt-12 sm:pt-14 text-center">
+        <motion.div variants={fadeUp} className="w-full pt-20 sm:pt-24 text-center">
           <SectionTitle title="Fotos" />
         </motion.div>
 
