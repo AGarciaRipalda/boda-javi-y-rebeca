@@ -9,7 +9,7 @@ const fadeUp = {
 
 function TitleWithMap({ title }) {
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center w-full">
       <img
         src="/mapamundi.png"
         alt=""
@@ -26,7 +26,7 @@ function TitleWithMap({ title }) {
 export default function PhotosSection({ photosUrl = null }) {
   return (
     <motion.section
-      className="min-h-screen flex flex-col items-center justify-center px-4 py-16 relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-start px-4 pt-24 pb-16 relative overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -39,11 +39,14 @@ export default function PhotosSection({ photosUrl = null }) {
       />
       <CompassRose />
 
-      <motion.div variants={fadeUp} className="relative z-10">
+      <motion.div variants={fadeUp} className="relative z-10 mt-4">
         <TitleWithMap title="Fotos" />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="text-center space-y-4 z-10 mt-8 max-w-xs">
+      <motion.div
+        variants={fadeUp}
+        className="text-center space-y-4 z-10 mt-24 sm:mt-28 max-w-xs"
+      >
         <h3 className="font-serif text-xl font-bold italic text-foreground">
           ¡Flash y dispara!
         </h3>
@@ -62,7 +65,7 @@ export default function PhotosSection({ photosUrl = null }) {
           href={photosUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 flex flex-col items-center gap-2 group relative z-10"
+          className="mt-14 flex flex-col items-center gap-2 group relative z-10"
         >
           <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
             <Camera className="w-7 h-7 text-primary" />
@@ -74,7 +77,7 @@ export default function PhotosSection({ photosUrl = null }) {
       ) : (
         <motion.div
           variants={fadeUp}
-          className="mt-8 flex flex-col items-center gap-2 opacity-70 relative z-10"
+          className="mt-14 flex flex-col items-center gap-2 opacity-70 relative z-10"
         >
           <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
             <Camera className="w-7 h-7 text-primary" />

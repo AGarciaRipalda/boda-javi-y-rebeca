@@ -9,7 +9,7 @@ const fadeUp = {
 
 function TitleWithOptionalMap({ title, showMap }) {
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center w-full">
       {showMap ? (
         <img
           src="/mapamundi.png"
@@ -40,7 +40,7 @@ export default function LocationSection({
 
   return (
     <motion.section
-      className="min-h-screen flex flex-col items-center justify-center px-4 py-16 relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-start px-4 pt-24 pb-16 relative overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -53,11 +53,14 @@ export default function LocationSection({
       />
       <CompassRose />
 
-      <motion.div variants={fadeUp} className="relative z-10">
+      <motion.div variants={fadeUp} className="relative z-10 mt-4">
         <TitleWithOptionalMap title={title} showMap={showMapBehindTitle} />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="text-center space-y-3 mt-8 relative z-10">
+      <motion.div
+        variants={fadeUp}
+        className="text-center space-y-3 mt-24 sm:mt-28 relative z-10"
+      >
         <h3 className="font-serif text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground">
           {venueName}
         </h3>
@@ -77,7 +80,7 @@ export default function LocationSection({
           href={mapUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 flex flex-col items-center gap-2 group relative z-10"
+          className="mt-14 flex flex-col items-center gap-2 group relative z-10"
         >
           <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
             <MapPin className="w-7 h-7 text-primary" />
