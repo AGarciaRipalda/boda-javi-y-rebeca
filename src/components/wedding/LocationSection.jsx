@@ -40,7 +40,7 @@ export default function LocationSection({
 
   return (
     <motion.section
-      className="min-h-screen flex flex-col items-center justify-start px-4 pt-24 pb-16 relative overflow-hidden"
+      className="relative min-h-screen overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -53,43 +53,47 @@ export default function LocationSection({
       />
       <CompassRose />
 
-      <motion.div variants={fadeUp} className="relative z-10 mt-4">
-        <TitleWithOptionalMap title={title} showMap={showMapBehindTitle} />
-      </motion.div>
+      <div className="relative z-10 flex min-h-screen flex-col items-center px-4">
+        <motion.div variants={fadeUp} className="w-full pt-14 sm:pt-16">
+          <TitleWithOptionalMap title={title} showMap={showMapBehindTitle} />
+        </motion.div>
 
-      <motion.div
-        variants={fadeUp}
-        className="text-center space-y-3 mt-24 sm:mt-28 relative z-10"
-      >
-        <h3 className="font-serif text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground">
-          {venueName}
-        </h3>
-        <div className="font-serif text-base sm:text-lg text-foreground/80 leading-relaxed">
-          {addressLines.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-        </div>
-        <p className="font-serif text-base sm:text-lg text-foreground/80">
-          a las {time}
-        </p>
-      </motion.div>
-
-      {mapUrl ? (
-        <motion.a
+        <motion.div
           variants={fadeUp}
-          href={mapUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-14 flex flex-col items-center gap-2 group relative z-10"
+          className="mt-auto max-w-sm text-center text-foreground"
         >
-          <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-            <MapPin className="w-7 h-7 text-primary" />
+          <h3 className="font-serif text-xl sm:text-2xl font-bold uppercase tracking-wider">
+            {venueName}
+          </h3>
+          <div className="mt-4 font-serif text-base sm:text-lg text-foreground/80 leading-relaxed">
+            {addressLines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
           </div>
-          <span className="font-sans text-xs uppercase tracking-widest text-primary">
-            (Ver mapa)
-          </span>
-        </motion.a>
-      ) : null}
+          <p className="mt-3 font-serif text-base sm:text-lg text-foreground/80">
+            a las {time}
+          </p>
+        </motion.div>
+
+        {mapUrl ? (
+          <motion.a
+            variants={fadeUp}
+            href={mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-12 mb-14 flex flex-col items-center gap-2 group relative z-10"
+          >
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+              <MapPin className="w-7 h-7 text-primary" />
+            </div>
+            <span className="font-sans text-xs uppercase tracking-widest text-primary">
+              (Ver mapa)
+            </span>
+          </motion.a>
+        ) : (
+          <div className="mb-14" />
+        )}
+      </div>
     </motion.section>
   );
 }
