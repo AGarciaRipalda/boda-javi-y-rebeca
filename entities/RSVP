@@ -1,0 +1,30 @@
+{
+  "name": "RSVP",
+  "type": "object",
+  "properties": {
+    "guest_name": {
+      "type": "string",
+      "description": "Nombre del invitado"
+    },
+    "num_guests": {
+      "type": "number",
+      "description": "N\u00famero de acompa\u00f1antes"
+    },
+    "dietary_restrictions": {
+      "type": "string",
+      "description": "Alergias o restricciones alimentarias"
+    },
+    "attending": {
+      "type": "boolean",
+      "description": "Confirma asistencia"
+    },
+    "message": {
+      "type": "string",
+      "description": "Mensaje para los novios"
+    }
+  },
+  "required": [
+    "guest_name",
+    "attending"
+  ]
+}

@@ -1,0 +1,2 @@
+Diseña a partir de la información de este index, una invitacion de boda exactamente igual que la que comparto en las capturas. Recuerda que la web se visualizará en dispostivos móviles
+y debe ser scrolleable verticalmente y con animaciones.
