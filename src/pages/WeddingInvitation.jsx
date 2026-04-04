@@ -58,7 +58,7 @@ export default function WeddingInvitation() {
               title="DESTINO"
               venueName="FINCA TIPUANA"
               address={WEDDING_ADDRESS}
-              time="Después de la ceremonia"
+              time="Tras la ceremonia"
               mapUrl={MAPS_URL}
               showMapBehindTitle
             />

@@ -32,17 +32,17 @@ export default function PlaylistSection({ playlistUrl = null }) {
       <img
         src="/mapamundi.png"
         alt=""
-        className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 opacity-22"
+        className="pointer-events-none absolute left-1/2 top-[45%] z-0 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 opacity-22"
         loading="lazy"
       />
       <CompassRose />
 
       <div className="relative z-10 flex min-h-screen flex-col items-center px-4">
-        <motion.div variants={fadeUp} className="w-full pt-28 sm:pt-32 text-center">
+        <motion.div variants={fadeUp} className="w-full pt-36 sm:pt-32 text-center">
           <SectionTitle title="Playlist" />
         </motion.div>
 
-        <div className="mt-auto flex w-full flex-col items-center pb-14">
+        <div className="mt-80 flex w-full flex-col items-center pb-4">
           <motion.div
             variants={fadeUp}
             className="max-w-xs text-center space-y-4"
@@ -75,7 +75,7 @@ export default function PlaylistSection({ playlistUrl = null }) {
           ) : (
             <motion.div
               variants={fadeUp}
-              className="mt-12 flex flex-col items-center gap-2 opacity-70"
+              className="mt-6 flex flex-col items-center gap-2 opacity-70"
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
                 <Music className="w-7 h-7 text-primary" />

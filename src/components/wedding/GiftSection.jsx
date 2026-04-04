@@ -55,7 +55,7 @@ export default function GiftSection({ iban = null }) {
           variants={fadeUp}
           className="font-sans text-xs uppercase tracking-[0.25em] text-primary mt-6 z-10 text-center"
         >
-          Si queréis tener ese detalle, pedidnos la cuenta y os la compartiremos.
+          IBAN Nº ---- ---- ---- ----
         </motion.p>
       )}
     </motion.section>

@@ -6,16 +6,18 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-function TitleWithMap({ title }) {
+function TitleWithMap({ title, titleClassName = "", mapClassName = "" }) {
   return (
     <div className="relative flex items-center justify-center">
       <img
         src="/mapamundi.png"
         alt=""
-        className="absolute left-1/2 top-1/2 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 opacity-22"
+        className={`pointer-events-none absolute left-1/2 top-1/2 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 opacity-22 ${mapClassName}`}
         loading="lazy"
       />
-      <h2 className="relative font-serif text-5xl sm:text-6xl font-bold tracking-wider uppercase text-foreground">
+      <h2
+        className={`relative z-10 font-serif text-5xl sm:text-6xl font-bold tracking-wider uppercase text-foreground ${titleClassName}`}
+      >
         {title}
       </h2>
     </div>
@@ -39,10 +41,14 @@ export default function PassportSection() {
       <CompassRose />
 
       <motion.div variants={fadeUp} className="relative z-10">
-        <TitleWithMap title="Pasaporte" />
+        <TitleWithMap
+          title="Pasaporte"
+          titleClassName="-mt-28"
+          mapClassName="top-[50%]"
+        />
       </motion.div>
 
-      <motion.div variants={fadeUp} className="w-[min(74vw,320px)] my-8 relative z-10">
+      <motion.div variants={fadeUp} className="w-[min(74vw,320px)] mt-24 -mb-8 relative z-10">
         <img
           src="/sello_pasaporte.png"
           alt="Sello de pasaporte"
@@ -53,7 +59,7 @@ export default function PassportSection() {
 
       <motion.h3
         variants={fadeUp}
-        className="font-serif text-4xl sm:text-5xl font-bold text-primary tracking-wide uppercase text-center relative z-10"
+        className="font-serif text-4xl sm:text-5xl font-bold text-primary tracking-wide uppercase text-center relative z-10 mt-20"
       >
         Javi & Rebeca
       </motion.h3>

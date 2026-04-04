@@ -32,7 +32,7 @@ export default function PhotosSection({ photosUrl = null }) {
       <img
         src="/mapamundi.png"
         alt=""
-        className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 opacity-22"
+        className="pointer-events-none absolute left-1/2 top-[45%] z-0 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 opacity-22"
         loading="lazy"
       />
       <CompassRose />
@@ -42,7 +42,7 @@ export default function PhotosSection({ photosUrl = null }) {
           <SectionTitle title="Fotos" />
         </motion.div>
 
-        <div className="mt-auto flex w-full flex-col items-center pb-14">
+        <div className="mt-auto flex w-full flex-col items-center pb-14 -translate-y-8">
           <motion.div
             variants={fadeUp}
             className="max-w-xs text-center space-y-4"
@@ -75,7 +75,7 @@ export default function PhotosSection({ photosUrl = null }) {
           ) : (
             <motion.div
               variants={fadeUp}
-              className="mt-12 flex flex-col items-center gap-2 opacity-70"
+              className="mt-2 -translate-y- flex flex-col items-center gap-2 opacity-70"
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
                 <Camera className="w-7 h-7 text-primary" />

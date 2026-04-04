@@ -63,7 +63,6 @@ export default function ItinerarySection() {
 
               <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-background/80 border border-primary/20 shadow-sm">
                 <Icon className="w-7 h-7 text-primary/70" strokeWidth={1.5} />
-                <div className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary" />
               </div>
 
               <div className="justify-self-start text-left">

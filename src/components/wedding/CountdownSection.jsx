@@ -78,7 +78,7 @@ export default function CountdownSection({ coupleUrl }) {
             <p className="font-sans text-[10px] uppercase tracking-wider text-muted-foreground">
               Lugar:
             </p>
-            <p className="font-sans text-xs font-bold text-foreground">Cádiz</p>
+            <p className="font-sans text-xs font-bold text-foreground">Puerto Real</p>
           </div>
           <div className="text-center">
             <p className="font-sans text-[10px] uppercase tracking-wider text-muted-foreground">
