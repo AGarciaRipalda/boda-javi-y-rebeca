@@ -61,7 +61,7 @@ export default function PassportSection() {
         variants={fadeUp}
         className="font-serif text-4xl sm:text-5xl font-bold text-primary tracking-wide uppercase text-center relative z-10 mt-20"
       >
-        Javi & Rebeca
+        Rebeca & Javi
       </motion.h3>
     </motion.section>
   );
