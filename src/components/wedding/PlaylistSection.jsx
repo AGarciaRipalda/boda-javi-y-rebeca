@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Music } from "lucide-react";
+import { Music, PlusCircle } from "lucide-react";
 import CompassRose from "./CompassRose";
 
 const fadeUp = {
@@ -15,7 +15,9 @@ function SectionTitle({ title }) {
   );
 }
 
-export default function PlaylistSection({ playlistUrl = null }) {
+export default function PlaylistSection({ embedUrl = null, playlistUrl = null }) {
+  const hasPlaylist = embedUrl || playlistUrl;
+
   return (
     <motion.section
       className="relative min-h-screen overflow-hidden"
@@ -42,37 +44,53 @@ export default function PlaylistSection({ playlistUrl = null }) {
           <SectionTitle title="Playlist" />
         </motion.div>
 
-        <div className="mt-80 flex w-full flex-col items-center pb-4">
-          <motion.div
-            variants={fadeUp}
-            className="max-w-xs text-center space-y-4"
-          >
-            <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-foreground">
-              ¡Esto promete!
-            </h3>
-            <p className="font-serif text-base italic text-foreground/80 leading-relaxed">
-              Queremos que la fiesta también suene a vosotros. Cuando tengamos la
-              playlist compartida lista, os la enviaremos para que añadáis
-              vuestras canciones favoritas.
-            </p>
-          </motion.div>
+        {hasPlaylist ? (
+          <div className="mt-12 w-full max-w-sm flex flex-col items-center gap-6 pb-16">
+            {embedUrl && (
+              <motion.div variants={fadeUp} className="w-full rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src={embedUrl}
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  className="block"
+                />
+              </motion.div>
+            )}
 
-          {playlistUrl ? (
-            <motion.a
+            {playlistUrl && (
+              <motion.a
+                variants={fadeUp}
+                href={playlistUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-3 rounded-full border border-primary/40 bg-background/80 hover:bg-primary/10 transition-colors group"
+              >
+                <PlusCircle className="w-5 h-5 text-primary" strokeWidth={1.5} />
+                <span className="font-serif text-sm uppercase tracking-widest text-primary">
+                  Añadir canción
+                </span>
+              </motion.a>
+            )}
+          </div>
+        ) : (
+          <div className="mt-80 flex w-full flex-col items-center pb-4">
+            <motion.div
               variants={fadeUp}
-              href={playlistUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-12 flex flex-col items-center gap-2 group"
+              className="max-w-xs text-center space-y-4"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center group-hover:bg-primary/80 transition-colors">
-                <Music className="w-7 h-7 text-primary-foreground" />
-              </div>
-              <span className="font-sans text-xs uppercase tracking-widest text-primary">
-                (Abrir playlist)
-              </span>
-            </motion.a>
-          ) : (
+              <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-foreground">
+                ¡Esto promete!
+              </h3>
+              <p className="font-serif text-base italic text-foreground/80 leading-relaxed">
+                Queremos que la fiesta también suene a vosotros. Cuando tengamos la
+                playlist lista, os la compartiremos para que añadáis vuestras
+                canciones favoritas.
+              </p>
+            </motion.div>
+
             <motion.div
               variants={fadeUp}
               className="mt-6 flex flex-col items-center gap-2 opacity-70"
@@ -84,8 +102,8 @@ export default function PlaylistSection({ playlistUrl = null }) {
                 Próximamente
               </span>
             </motion.div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </motion.section>
   );

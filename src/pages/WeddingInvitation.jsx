@@ -23,6 +23,13 @@ const IMAGES = {
   coupleWalk: "/couple-walk-clean.jpg",
 };
 
+// Spotify: embedUrl → https://open.spotify.com/embed/playlist/PLAYLIST_ID?utm_source=generator
+//          playlistUrl → https://open.spotify.com/playlist/PLAYLIST_ID
+const PLAYLIST = {
+  embedUrl: null,
+  playlistUrl: null,
+};
+
 export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -66,7 +73,7 @@ export default function WeddingInvitation() {
               showMapBehindTitle
             />
             <ItinerarySection />
-            <PlaylistSection />
+            <PlaylistSection embedUrl={PLAYLIST.embedUrl} playlistUrl={PLAYLIST.playlistUrl} />
             <RSVPSection />
             <PhotosSection />
             <GiftSection />
