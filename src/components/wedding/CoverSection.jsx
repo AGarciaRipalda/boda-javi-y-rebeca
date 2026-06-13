@@ -27,7 +27,7 @@ export default function CoverSection({ onOpen }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
         >
-          Javi
+          Rebeca
         </motion.h1>
 
         <motion.p
@@ -45,7 +45,7 @@ export default function CoverSection({ onOpen }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 1 }}
         >
-          Rebeca
+          Javi
         </motion.h1>
 
         <motion.div
