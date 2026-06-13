@@ -19,6 +19,7 @@ const MAPS_URL =
 
 const IMAGES = {
   couplePhoto: "/couple-portrait.jpg",
+  coupleWalk: "/couple-walk-clean.jpg",
 };
 
 export default function WeddingInvitation() {
@@ -67,7 +68,7 @@ export default function WeddingInvitation() {
             <RSVPSection />
             <PhotosSection />
             <GiftSection />
-            <CountdownSection coupleUrl={IMAGES.couplePhoto} />
+            <CountdownSection coupleUrl={IMAGES.coupleWalk} />
           </motion.div>
         )}
       </AnimatePresence>
