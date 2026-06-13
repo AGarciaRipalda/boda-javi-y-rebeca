@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, GlassWater, Music, PartyPopper } from "lucide-react";
+import { Heart, GlassWater, Utensils, Music, PartyPopper } from "lucide-react";
 import CompassRose from "./CompassRose";
 
 const fadeUp = {
@@ -9,9 +9,10 @@ const fadeUp = {
 
 const events = [
   { time: "12:00 h", label: "Ceremonia", icon: Heart },
-  { time: "Después", label: "Cóctel", icon: GlassWater },
-  { time: "Más tarde", label: "Disco", icon: Music },
-  { time: "00:00 h", label: "Cierre", icon: PartyPopper },
+  { time: "13:00 h", label: "Cóctel", icon: GlassWater },
+  { time: "14:00 h", label: "Almuerzo", icon: Utensils },
+  { time: "19:00 h", label: "Baile de novios", icon: Music },
+  { time: "20:00 h", label: "Barra libre", icon: PartyPopper },
 ];
 
 export default function ItinerarySection() {
@@ -32,7 +33,7 @@ export default function ItinerarySection() {
 
       <motion.h2
         variants={fadeUp}
-        className="relative z-10 mt-20 sm:mt-24 font-serif text-5xl sm:text-6xl font-bold text-foreground tracking-wider uppercase mb-16 text-center"
+        className="relative z-10 mt-20 sm:mt-24 font-serif text-5xl sm:text-6xl font-bold text-foreground tracking-wider uppercase mb-10 text-center"
       >
         Itinerario
       </motion.h2>
@@ -53,7 +54,7 @@ export default function ItinerarySection() {
                   transition: { duration: 0.6, delay: idx * 0.15 },
                 },
               }}
-              className="grid grid-cols-[1fr_auto_1fr] items-center gap-5 mb-12 relative"
+              className="grid grid-cols-[1fr_auto_1fr] items-center gap-5 mb-8 relative"
             >
               <div className="justify-self-end text-right">
                 <p className="font-serif text-lg sm:text-xl text-foreground font-bold">
@@ -61,8 +62,8 @@ export default function ItinerarySection() {
                 </p>
               </div>
 
-              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-background/80 border border-primary/20 shadow-sm">
-                <Icon className="w-7 h-7 text-primary/70" strokeWidth={1.5} />
+              <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-background/80 border border-primary/20 shadow-sm">
+                <Icon className="w-6 h-6 text-primary/70" strokeWidth={1.5} />
               </div>
 
               <div className="justify-self-start text-left">
