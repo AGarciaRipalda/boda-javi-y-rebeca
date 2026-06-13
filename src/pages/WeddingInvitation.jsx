@@ -11,6 +11,7 @@ import RSVPSection from "../components/wedding/RSVPSection";
 import PhotosSection from "../components/wedding/PhotosSection";
 import GiftSection from "../components/wedding/GiftSection";
 import CountdownSection from "../components/wedding/CountdownSection";
+import MusicPlayer from "../components/wedding/MusicPlayer";
 
 const WEDDING_ADDRESS =
   "Ctra. Portal-las Yeguas, 11\n11510 Puerto Real, Cádiz";
@@ -27,6 +28,7 @@ export default function WeddingInvitation() {
 
   return (
     <div className="w-full min-h-screen bg-background overflow-x-hidden font-serif">
+      <MusicPlayer playing={isOpen} />
       <AnimatePresence mode="wait">
         {!isOpen ? (
           <motion.div
