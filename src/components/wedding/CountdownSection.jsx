@@ -92,7 +92,7 @@ export default function CountdownSection({ coupleUrl }) {
           variants={fadeUp}
           className="font-serif text-4xl sm:text-5xl font-bold text-primary text-center mt-4 uppercase"
         >
-          Javi & Rebeca
+          Rebeca & Javi
         </motion.h2>
 
         <motion.p
