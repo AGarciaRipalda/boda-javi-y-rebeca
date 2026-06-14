@@ -50,7 +50,7 @@ export default function PlaylistSection({ embedUrl = null, playlistUrl = null })
               <h3 className="font-serif text-xl font-bold italic text-foreground">
                 ¡La fiesta también suena a vosotros!
               </h3>
-              <p className="font-serif text-sm italic text-foreground/80 leading-relaxed">
+              <p className="font-serif text-sm italic font-bold text-foreground leading-relaxed">
                 Aquí está nuestra playlist. Si tenéis una canción que no puede faltar, añadidla y la ponemos en la boda.
               </p>
             </motion.div>
