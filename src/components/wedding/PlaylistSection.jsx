@@ -45,7 +45,16 @@ export default function PlaylistSection({ embedUrl = null, playlistUrl = null })
         </motion.div>
 
         {hasPlaylist ? (
-          <div className="mt-12 w-full max-w-sm flex flex-col items-center gap-6 pb-16">
+          <div className="mt-8 w-full max-w-sm flex flex-col items-center gap-6 pb-16">
+            <motion.div variants={fadeUp} className="text-center space-y-3 px-2">
+              <h3 className="font-serif text-xl font-bold italic text-foreground">
+                ¡La fiesta también suena a vosotros!
+              </h3>
+              <p className="font-serif text-sm italic text-foreground/80 leading-relaxed">
+                Aquí está nuestra playlist. Si tenéis una canción que no puede faltar, añadidla y la ponemos en la boda.
+              </p>
+            </motion.div>
+
             {embedUrl && (
               <motion.div variants={fadeUp} className="w-full rounded-xl overflow-hidden shadow-lg">
                 <iframe
@@ -70,7 +79,7 @@ export default function PlaylistSection({ embedUrl = null, playlistUrl = null })
               >
                 <PlusCircle className="w-5 h-5 text-primary" strokeWidth={1.5} />
                 <span className="font-serif text-sm uppercase tracking-widest text-primary">
-                  Añadir canción
+                  Añadir mi canción
                 </span>
               </motion.a>
             )}

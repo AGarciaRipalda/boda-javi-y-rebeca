@@ -26,8 +26,8 @@ const IMAGES = {
 // Spotify: embedUrl → https://open.spotify.com/embed/playlist/PLAYLIST_ID?utm_source=generator
 //          playlistUrl → https://open.spotify.com/playlist/PLAYLIST_ID
 const PLAYLIST = {
-  embedUrl: null,
-  playlistUrl: null,
+  embedUrl: "https://open.spotify.com/embed/playlist/4jzYuvggdSFe42o2qr8XCt?utm_source=generator",
+  playlistUrl: "https://open.spotify.com/playlist/4jzYuvggdSFe42o2qr8XCt?si=NfNF9_ugTFaOKWVX6oit9Q",
 };
 
 export default function WeddingInvitation() {
@@ -75,7 +75,7 @@ export default function WeddingInvitation() {
             <ItinerarySection />
             <PlaylistSection embedUrl={PLAYLIST.embedUrl} playlistUrl={PLAYLIST.playlistUrl} />
             <RSVPSection />
-            <PhotosSection />
+            <PhotosSection photosUrl="https://drive.google.com/drive/folders/1QIyk5itDDONS3JF4SwxpcQWaeDLdoDYP?usp=sharing" />
             <GiftSection />
             <CountdownSection coupleUrl={IMAGES.coupleWalk} />
           </motion.div>

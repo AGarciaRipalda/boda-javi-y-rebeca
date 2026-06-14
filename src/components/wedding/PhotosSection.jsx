@@ -69,7 +69,7 @@ export default function PhotosSection({ photosUrl = null }) {
                 <Camera className="w-7 h-7 text-primary" />
               </div>
               <span className="font-sans text-xs uppercase tracking-widest text-primary">
-                (Ver álbum)
+                Ver fototeca
               </span>
             </motion.a>
           ) : (
