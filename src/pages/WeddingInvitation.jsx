@@ -26,8 +26,8 @@ const IMAGES = {
 // Spotify: embedUrl → https://open.spotify.com/embed/playlist/PLAYLIST_ID?utm_source=generator
 //          playlistUrl → https://open.spotify.com/playlist/PLAYLIST_ID
 const PLAYLIST = {
-  embedUrl: "https://open.spotify.com/embed/playlist/4jzYuvggdSFe42o2qr8XCt?utm_source=generator",
-  playlistUrl: "https://open.spotify.com/playlist/4jzYuvggdSFe42o2qr8XCt?si=NfNF9_ugTFaOKWVX6oit9Q",
+  embedUrl: "https://open.spotify.com/embed/playlist/1pEdwAwm6sx6rHb2ZZpo81?utm_source=generator",
+  playlistUrl: "https://open.spotify.com/playlist/1pEdwAwm6sx6rHb2ZZpo81?si=NfqEB4J-RWCMBCMk80onCA&pi=LoyKVy7QQZ219&pt=a692039f904e808b1cc55cddd431b759",
 };
 
 export default function WeddingInvitation() {
