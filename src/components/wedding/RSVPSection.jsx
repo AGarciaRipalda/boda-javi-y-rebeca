@@ -41,8 +41,8 @@ export default function RSVPSection({ rsvpUrl = null }) {
 
       <motion.div variants={fadeUp} className="relative z-10 text-center space-y-4 max-w-xs mt-8">
         <p className="font-serif text-base italic text-foreground/80 leading-relaxed">
-          Tu pasaporte ya está preparado,
-          solo falta que confirmes tu asiento.
+          ¿Podrás venir con nosotros?
+          Avísanos por WhatsApp
         </p>
       </motion.div>
 
