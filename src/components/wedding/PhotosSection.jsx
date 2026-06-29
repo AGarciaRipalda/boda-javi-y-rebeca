@@ -54,11 +54,11 @@ export default function PhotosSection({ photosUrl = null }) {
         </motion.div>
 
         {photosUrl && (
-          <motion.div variants={fadeUp} className="relative z-10 mt-6 w-full max-w-xl">
+          <motion.div variants={fadeUp} className="relative z-10 mt-6 w-full max-w-xs mx-auto">
             <div className="relative rounded-lg overflow-hidden bg-black/10 backdrop-blur-sm border border-primary/20">
               <iframe
                 src="https://drive.google.com/embeddedfolderview?id=1QIyk5itDDONS3JF4SwxpcQWaeDLdoDYP#grid"
-                style={{ width: "100%", height: "250px", border: "none" }}
+                style={{ width: "100%", height: "450px", border: "none" }}
                 allowFullScreen
               ></iframe>
             </div>
