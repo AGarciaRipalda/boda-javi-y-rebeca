@@ -19,7 +19,7 @@ const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Finca+Tipuana+Ctra.+Portal-las+Yeguas+11+11510+Puerto+Real+C%C3%A1diz";
 
 const IMAGES = {
-  couplePhoto: "/couple-portrait.jpg",
+  couplePhoto: "/foto_1.jpeg",
   coupleWalk: "/couple-walk-clean.jpg",
 };
 
