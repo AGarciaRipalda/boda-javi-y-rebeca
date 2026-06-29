@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Camera } from "lucide-react";
+import { Camera, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import CompassRose from "./CompassRose";
 
 const fadeUp = {
@@ -16,6 +17,16 @@ function SectionTitle({ title }) {
 }
 
 export default function PhotosSection({ photosUrl = null }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? 0 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentImageIndex((prev) => prev + 1);
+  };
+
   return (
     <motion.section
       className="relative min-h-screen overflow-hidden"
@@ -41,6 +52,18 @@ export default function PhotosSection({ photosUrl = null }) {
         <motion.div variants={fadeUp} className="w-full pt-28 sm:pt-32 text-center">
           <SectionTitle title="Fotos" />
         </motion.div>
+
+        {photosUrl && (
+          <motion.div variants={fadeUp} className="relative z-10 mt-8 w-full max-w-2xl">
+            <div className="relative rounded-lg overflow-hidden bg-black/10 backdrop-blur-sm border border-primary/20">
+              <iframe
+                src="https://drive.google.com/embeddedfolderview?id=1QIyk5itDDONS3JF4SwxpcQWaeDLdoDYP#grid"
+                style={{ width: "100%", height: "400px", border: "none" }}
+                allowFullScreen
+              ></iframe>
+            </div>
+          </motion.div>
+        )}
 
         <div className="mt-auto flex w-full flex-col items-center pb-14 -translate-y-8">
           <motion.div
