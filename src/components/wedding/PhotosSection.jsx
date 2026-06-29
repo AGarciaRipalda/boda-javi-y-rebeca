@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import { Camera, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CompassRose from "./CompassRose";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
+
+const carouselImages = [
+  "/carrusel1.jpg",
+  "/carrusel2.jpg",
+  "/carrusel3.jpg",
+  "/carrusel4.jpg",
+  "/carrusel5.jpg",
+];
 
 function SectionTitle({ title }) {
   return (
@@ -17,14 +25,14 @@ function SectionTitle({ title }) {
 }
 
 export default function PhotosSection({ photosUrl = null }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? 0 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentImageIndex((prev) => prev + 1);
+    setCurrentIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -53,17 +61,44 @@ export default function PhotosSection({ photosUrl = null }) {
           <SectionTitle title="Fotos" />
         </motion.div>
 
-        {photosUrl && (
-          <motion.div variants={fadeUp} className="relative z-10 mt-4 mx-auto" style={{ width: "280px" }}>
-            <div className="relative rounded-lg overflow-hidden bg-black/10 backdrop-blur-sm border border-primary/20">
-              <iframe
-                src="https://drive.google.com/embeddedfolderview?id=1QIyk5itDDONS3JF4SwxpcQWaeDLdoDYP#grid"
-                style={{ width: "100%", height: "280px", border: "none" }}
-                allowFullScreen
-              ></iframe>
+        <motion.div variants={fadeUp} className="relative z-10 mt-6 mx-auto" style={{ width: "300px" }}>
+          <div className="relative rounded-lg overflow-hidden bg-black/10 backdrop-blur-sm border border-primary/20 shadow-lg">
+            <div className="relative w-full aspect-square">
+              <img
+                src={carouselImages[currentIndex]}
+                alt={`Foto ${currentIndex + 1}`}
+                className="w-full h-full object-cover transition-opacity duration-300"
+                loading="lazy"
+              />
+
+              <button
+                onClick={handlePrev}
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-colors z-20"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              <button
+                onClick={handleNext}
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-colors z-20"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1 z-20">
+                {carouselImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      idx === currentIndex ? "bg-white w-6" : "bg-white/50"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
-          </motion.div>
-        )}
+          </div>
+        </motion.div>
 
         <div className="mt-auto flex w-full flex-col items-center pb-14 -translate-y-8">
           <motion.div
@@ -98,7 +133,7 @@ export default function PhotosSection({ photosUrl = null }) {
           ) : (
             <motion.div
               variants={fadeUp}
-              className="mt-2 -translate-y- flex flex-col items-center gap-2 opacity-70"
+              className="mt-2 flex flex-col items-center gap-2 opacity-70"
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
                 <Camera className="w-7 h-7 text-primary" />
