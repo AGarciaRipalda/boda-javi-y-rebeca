@@ -76,7 +76,7 @@ export default function WeddingInvitation() {
             <PlaylistSection embedUrl={PLAYLIST.embedUrl} playlistUrl={PLAYLIST.playlistUrl} />
             <RSVPSection />
             <PhotosSection photosUrl="https://drive.google.com/drive/folders/1QIyk5itDDONS3JF4SwxpcQWaeDLdoDYP?usp=sharing" />
-            <GiftSection />
+            <GiftSection iban="ES94 0182 6705 8902 0163 8682" />
             <CountdownSection coupleUrl={IMAGES.coupleWalk} />
           </motion.div>
         )}
