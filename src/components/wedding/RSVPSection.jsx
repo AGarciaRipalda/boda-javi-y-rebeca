@@ -46,7 +46,7 @@ export default function RSVPSection({ rsvpUrl = null }) {
         </p>
       </motion.div>
 
-      <motion.div variants={fadeUp} className="relative z-10 mt-12 flex gap-6 flex-col sm:flex-row items-center">
+      <motion.div variants={fadeUp} className="relative z-10 mt-12 flex gap-6 flex-row items-center justify-center">
         <motion.a
           href={`https://wa.me/34610715420?text=${encodeURIComponent("Hola! Paso por aquí para confirmar que SÍ asistiré a vuestra boda. 🤵‍♂️👰‍♀️\n\nNombre(s): [Escribe aquí tu nombre y el de tu acompañante]\n\nAutobús: [Sí / No] necesito plaza\n\nMenú especial / Alergias: [Indica aquí si tienes alguna intolerancia o alergia]\n\n¡Qué ganas de que llegue el día! 🎉")}`}
           target="_blank"
