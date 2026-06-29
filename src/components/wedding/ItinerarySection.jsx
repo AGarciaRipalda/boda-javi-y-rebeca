@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, GlassWater, Utensils, Music, PartyPopper } from "lucide-react";
+import { Heart, GlassWater, Utensils, Music, PartyPopper, Moon } from "lucide-react";
 import CompassRose from "./CompassRose";
 
 const fadeUp = {
@@ -13,6 +13,7 @@ const events = [
   { time: "14:00 h", label: "Almuerzo", icon: Utensils },
   { time: "19:00 h", label: "Baile de novios", icon: Music },
   { time: "20:00 h", label: "Barra libre", icon: PartyPopper },
+  { time: "00:00 h", label: "Fin de fiesta", icon: Moon },
 ];
 
 export default function ItinerarySection() {
