@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe } from "lucide-react";
+import { MessageCircle, Check, X } from "lucide-react";
 import CompassRose from "./CompassRose";
 
 const fadeUp = {
@@ -43,37 +43,34 @@ export default function RSVPSection({ rsvpUrl = null }) {
         <p className="font-serif text-base italic text-foreground/80 leading-relaxed">
           Tu pasaporte ya está preparado,
           solo falta que confirmes tu asiento.
-          Muy pronto os compartiremos
-          la forma de confirmar asistencia.
         </p>
       </motion.div>
 
-      {rsvpUrl ? (
+      <motion.div variants={fadeUp} className="relative z-10 mt-12 flex gap-6 flex-col sm:flex-row items-center">
         <motion.a
-          variants={fadeUp}
-          href={rsvpUrl}
-          className="relative z-10 mt-8 flex flex-col items-center gap-2 group cursor-pointer"
+          href={`https://wa.me/34610715420?text=${encodeURIComponent("Hola! Paso por aquí para confirmar que SÍ asistiré a vuestra boda. 🤵‍♂️👰‍♀️\n\nNombre(s): [Escribe aquí tu nombre y el de tu acompañante]\n\nAutobús: [Sí / No] necesito plaza\n\nMenú especial / Alergias: [Indica aquí si tienes alguna intolerancia o alergia]\n\n¡Qué ganas de que llegue el día! 🎉")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-3 group cursor-pointer"
         >
-          <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-            <Globe className="w-7 h-7 text-primary" />
+          <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+            <Check className="w-8 h-8 text-green-600" strokeWidth={1.5} />
           </div>
-          <span className="font-sans text-xs uppercase tracking-widest text-primary">
-            (Confirmar)
-          </span>
+          <span className="font-serif text-lg font-bold text-foreground">Voy!</span>
         </motion.a>
-      ) : (
-        <motion.div
-          variants={fadeUp}
-          className="relative z-10 mt-8 flex flex-col items-center gap-2 opacity-70"
+
+        <motion.a
+          href={`https://wa.me/34610715420?text=${encodeURIComponent("Hola! Os escribo para confirmaros que, sintiéndolo muchísimo, NO podré asistir a vuestra boda. Me da mucha pena perdérmelo, pero os deseo todo lo mejor en vuestro gran día. ¡Os mando un abrazo enorme! ❤️✨")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-3 group cursor-pointer"
         >
-          <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-            <Globe className="w-7 h-7 text-primary" />
+          <div className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors">
+            <X className="w-8 h-8 text-red-600" strokeWidth={1.5} />
           </div>
-          <span className="font-sans text-xs uppercase tracking-widest text-primary">
-            Próximamente
-          </span>
-        </motion.div>
-      )}
+          <span className="font-serif text-lg font-bold text-foreground">No puedo!</span>
+        </motion.a>
+      </motion.div>
     </motion.section>
   );
 }
